@@ -39,23 +39,6 @@
 #include "utimens.h"
 #include "acl.h"
 
-// Function to update the progress bar
-void progress_bar(long long current, long long total) {
-    int bar_width = 70;  // Width of the progress bar
-    float progress = (float)current / total;
-    int pos = bar_width * progress;
-
-    // Display the progress bar like tqdm
-    printf("[");
-    for (int i = 0; i < bar_width; ++i) {
-        if (i < pos) printf("█");  // Progress bar symbol
-        else if (i == pos) printf(">");  // Arrow indicating progress
-        else printf(" ");  // Empty space
-    }
-    printf("] %.2f%%\r", progress * 100);
-    fflush(stdout);  // To update the line without adding a new one
-}
-
 /* The official name of this program (e.g., no 'g' prefix).  */
 #define PROGRAM_NAME "cp"
 
